@@ -2,13 +2,12 @@
 import { Repl, useStore, useVueImportMap } from '@vue/repl';
 import Monaco from '@vue/repl/monaco-editor';
 import components from './components.js?raw';
-import AppCodeStr from './templates/App.Vue?raw';
+import { AppCodeStr } from './templates/App.vue.ts';
 import { mainCSS } from './templates/css.ts';
 import { mainTS } from './templates/main';
 // import { genCdnLink } from './utils';
 
 const vueImportMap = useVueImportMap();
-
 
 const store = useStore();
 

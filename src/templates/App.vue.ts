@@ -1,4 +1,4 @@
-<script setup lang="ts">
+export const AppCodeStr = `<script setup lang="ts">
 import { ref } from 'vue';
 import { UAccordion, UInput } from './components.js';
 import './main.ts';
@@ -19,7 +19,7 @@ const items = ref([
 ])
 
 const msg = ref('Welcome to Nuxt UI Playground')
-</script>
+<\/script>
 
 <template>
   <div class="p-8 flex flex-col gap-4">
@@ -27,4 +27,4 @@ const msg = ref('Welcome to Nuxt UI Playground')
     <UInput v-model="msg"></UInput>
     <UAccordion :items="items" />
   </div>
-</template>
+</template>`
