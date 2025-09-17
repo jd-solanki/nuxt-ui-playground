@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { UAccordion } from './components.js';
+import { UAccordion, UInput } from './components.js';
 import './main.ts';
-
-const msg = ref('Welcome to the Nuxt UI Playground!');
 
 const items = ref([
   {
@@ -19,11 +17,14 @@ const items = ref([
     content: 'Yes! Nuxt UI is used in production by thousands of applications with extensive tests, regular updates, and active maintenance.'
   }
 ])
+
+const msg = ref('Welcome to Nuxt UI Playground')
 </script>
 
 <template>
-  <div class="p-8 flex flex-col items-center justify-center space-y-4">
+  <div class="p-8 flex flex-col gap-4">
     <h1 class="text-2xl font-bold text-primary">{{ msg }}</h1>
+    <UInput v-model="msg"></UInput>
     <UAccordion :items="items" />
   </div>
 </template>
