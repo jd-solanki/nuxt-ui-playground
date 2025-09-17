@@ -2,6 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "EditorConfig.EditorConfig",
-    "matijao.vue-nuxt-snippets"
+    "matijao.vue-nuxt-snippets",
+    "xabikos.javascriptsnippets"
   ]
 }

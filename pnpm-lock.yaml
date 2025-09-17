@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@vue/repl':
+        specifier: ^4.7.0
+        version: 4.7.0
       vue:
         specifier: ^3.5.18
         version: 3.5.21(typescript@5.8.3)
@@ -700,6 +703,9 @@ packages:
 
   '@vue/reactivity@3.5.21':
     resolution: {integrity: sha512-3ah7sa+Cwr9iiYEERt9JfZKPw4A2UlbY8RbbnH2mGCE8NwHkhmlZt2VsH0oDA3P08X3jJd29ohBDtX+TbD9AsA==}
+
+  '@vue/repl@4.7.0':
+    resolution: {integrity: sha512-1veaAsfO6xYLblo8jr2hQDlegdPjaCZkchZuG7PRhC9zX0bN2aLenu2rT7AEPAXDXK0OXCsB2+WIUevOTyMvLg==}
 
   '@vue/runtime-core@3.5.21':
     resolution: {integrity: sha512-+DplQlRS4MXfIf9gfD1BOJpk5RSyGgGXD/R+cumhe8jdjUcq/qlxDawQlSI8hCKupBlvM+3eS1se5xW+SuNAwA==}
@@ -2235,6 +2241,8 @@ snapshots:
   '@vue/reactivity@3.5.21':
     dependencies:
       '@vue/shared': 3.5.21
+
+  '@vue/repl@4.7.0': {}
 
   '@vue/runtime-core@3.5.21':
     dependencies:
