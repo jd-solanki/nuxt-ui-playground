@@ -1,31 +1,44 @@
 <script setup lang="ts">
-import { Repl, useStore, useVueImportMap } from '@vue/repl';
+import { File, Repl, useStore } from '@vue/repl';
 import Monaco from '@vue/repl/monaco-editor';
+// import CodeMirror from '@vue/repl/codemirror-editor';
+import { ref } from 'vue';
 import components from './components.js?raw';
 import { AppCodeStr } from './templates/App.vue.ts';
 import { mainCSS } from './templates/css.ts';
 import { mainTS } from './templates/main';
-// import { genCdnLink } from './utils';
+import { newSFC } from './templates/newSFC.ts';
 
-const vueImportMap = useVueImportMap();
-
-const store = useStore();
-
-store.setFiles({
-  'src/App.vue': AppCodeStr,
-  'main.css': mainCSS,
-  'main.ts': mainTS,
-
+const files = ref<Record<string, File>>({
   // NOTE: This will be replaced with CDN links
-  'components.js': components,
+  'src/components.js': new File('src/components.js', components, true),
+  'src/main.css': new File('src/main.css', mainCSS, true),
+  'src/main.ts': new File('src/main.ts', mainTS, true),
+})
 
-  'import-map.json': JSON.stringify({
-    imports: {
-      ...vueImportMap.importMap.value.imports,
-      // '@nuxt/ui': genCdnLink('@nuxt/ui', '4.0.0-alpha.2', '/dist/runtime/types/index.js'),
-    },
-  }, null, 2),
-});
+const store = useStore(
+  {
+    files,
+    template: ref({
+        welcomeSFC: AppCodeStr,
+        newSFC: newSFC,
+    })
+  },
+  location.hash
+);
+
+// store.setFiles({
+//   'import-map.json': JSON.stringify({
+//     imports: {
+//       ...vueImportMap.importMap.value.imports,
+//       // '@nuxt/ui': genCdnLink('@nuxt/ui', '4.0.0-alpha.2', '/dist/runtime/types/index.js'),
+//     },
+//   }, null, 2),
+// });
+
+// NOTE: This is using too much resources so will disable for now
+// persist state to URL hash
+// watchEffect(() => history.replaceState({}, '', store.serialize()))
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 export const AppCodeStr = `<script setup lang="ts">
 import { ref } from 'vue';
-import { UAccordion, UInput } from './components.js';
-import './main.ts';
+import { UAccordion, UInput } from './components.js'; /* Load Nuxt UI component from here */
+import './main.ts'; /* Do not remove */
 
 const items = ref([
   {
@@ -19,7 +19,7 @@ const items = ref([
 ])
 
 const msg = ref('Welcome to Nuxt UI Playground')
-<\/script>
+</script>
 
 <template>
   <div class="p-8 flex flex-col gap-4">
